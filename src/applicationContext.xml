@@ -6,11 +6,19 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Define the dependency helper class -->
+    <bean id="myFortune" class="com.chetan.springdemo.ioc.HappyFortuneService">
+    </bean>
 
     <!-- Define your beans here -->
-    <bean id="myCoach" class="com.chetan.springdemo.ioc.TrackCoach">
+    <bean id="myCoach" class="com.chetan.springdemo.ioc.BaseballCoach">
+    <!-- setup constructor injection -->
+    <constructor-arg ref="myFortune"/>
     </bean>
     <bean id="CricCoach" class="com.chetan.springdemo.ioc.CricketCoach">
+    <!-- setup constructor injection -->
+    <constructor-arg ref="myFortune"/>
     </bean>
 </beans>
 
