@@ -16,7 +16,7 @@
     <!-- Define your beans here -->
     <bean id="myCoach" 
     	class="com.chetan.springdemo.ioc.BaseballCoach"
-    	scope="prototype">
+    	scope="singleton">
     
     <!-- setup constructor injection -->
     <constructor-arg ref="myFortune"/>
